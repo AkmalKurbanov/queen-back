@@ -1,0 +1,10 @@
+fields:
+    question:
+        label: 'FAQ question'
+        span: auto
+        type: text
+    description:
+        label: 'FAQ description'
+        size: ''
+        span: auto
+        type: richeditor

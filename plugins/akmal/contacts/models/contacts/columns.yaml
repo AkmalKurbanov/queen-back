@@ -1,0 +1,10 @@
+columns:
+    phone:
+        label: 'contact phone'
+        type: text
+    mail:
+        label: 'contact mail'
+        type: text
+    place:
+        label: place
+        type: text

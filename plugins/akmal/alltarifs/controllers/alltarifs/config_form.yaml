@@ -1,0 +1,10 @@
+name: AllTarifs
+form: $/akmal/alltarifs/models/alltarifs/fields.yaml
+modelClass: Akmal\Alltarifs\Models\AllTarifs
+defaultRedirect: akmal/alltarifs/alltarifs
+create:
+    redirect: 'akmal/alltarifs/alltarifs/update/:id'
+    redirectClose: akmal/alltarifs/alltarifs
+update:
+    redirect: akmal/alltarifs/alltarifs
+    redirectClose: akmal/alltarifs/alltarifs

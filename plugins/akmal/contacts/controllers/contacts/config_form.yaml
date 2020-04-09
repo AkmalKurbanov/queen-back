@@ -1,0 +1,10 @@
+name: Contacts
+form: $/akmal/contacts/models/contacts/fields.yaml
+modelClass: Akmal\Contacts\Models\Contacts
+defaultRedirect: akmal/contacts/contacts
+create:
+    redirect: 'akmal/contacts/contacts/update/:id'
+    redirectClose: akmal/contacts/contacts
+update:
+    redirect: akmal/contacts/contacts
+    redirectClose: akmal/contacts/contacts

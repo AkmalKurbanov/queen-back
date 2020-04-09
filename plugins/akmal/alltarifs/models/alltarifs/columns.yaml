@@ -1,0 +1,7 @@
+columns:
+    description:
+        label: 'tarif description'
+        type: text
+    bonus:
+        label: 'tarif bonus'
+        type: text

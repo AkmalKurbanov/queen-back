@@ -1,0 +1,11 @@
+fields:
+    description:
+        label: 'About description'
+        size: ''
+        span: auto
+        type: richeditor
+    img:
+        label: 'About img'
+        mode: image
+        span: auto
+        type: mediafinder

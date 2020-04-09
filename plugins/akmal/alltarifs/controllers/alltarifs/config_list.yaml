@@ -1,0 +1,12 @@
+list: $/akmal/alltarifs/models/alltarifs/columns.yaml
+modelClass: Akmal\Alltarifs\Models\AllTarifs
+title: AllTarifs
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'akmal/alltarifs/alltarifs/update/:id'

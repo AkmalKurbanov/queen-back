@@ -1,0 +1,4 @@
+columns:
+    description:
+        label: 'about description'
+        type: text

@@ -1,0 +1,4 @@
+title: DescOrder
+modelClass: Akmal\DescOrder\Models\DescOrder
+toolbar:
+    buttons: reorder_toolbar

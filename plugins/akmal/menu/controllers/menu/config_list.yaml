@@ -1,0 +1,12 @@
+list: $/akmal/menu/models/menu/columns.yaml
+modelClass: Akmal\Menu\Models\Menu
+title: Menu
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'akmal/menu/menu/update/:id'

@@ -1,0 +1,10 @@
+fields:
+    title:
+        label: 'Advantage title'
+        span: left
+        type: text
+    description:
+        label: 'Advantage description'
+        size: ''
+        span: right
+        type: richeditor

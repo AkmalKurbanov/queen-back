@@ -1,0 +1,10 @@
+name: DescOrder
+form: $/akmal/descorder/models/descorder/fields.yaml
+modelClass: Akmal\DescOrder\Models\DescOrder
+defaultRedirect: akmal/descorder/descorder
+create:
+    redirect: 'akmal/descorder/descorder/update/:id'
+    redirectClose: akmal/descorder/descorder
+update:
+    redirect: akmal/descorder/descorder
+    redirectClose: akmal/descorder/descorder

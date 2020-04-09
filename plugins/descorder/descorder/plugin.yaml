@@ -1,0 +1,6 @@
+plugin:
+    name: 'descorder.descorder::lang.plugin.name'
+    description: 'descorder.descorder::lang.plugin.description'
+    author: 'desc order'
+    icon: oc-icon-adjust
+    homepage: ''

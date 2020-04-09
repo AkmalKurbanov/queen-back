@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.descorder::lang.plugin.name'
+    description: 'akmal.descorder::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-list-alt
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'desc order'
+        url: akmal/descorder/descorder
+        icon: icon-list-alt

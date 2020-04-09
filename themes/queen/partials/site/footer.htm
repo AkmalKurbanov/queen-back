@@ -1,0 +1,110 @@
+[builderList contacts]
+modelClass = "Akmal\Contacts\Models\Contacts"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "slug"
+noRecordsMessage = "Нет записей"
+detailsPage = "home"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+
+[builderList menu]
+modelClass = "Akmal\Menu\Models\Menu"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "slug"
+noRecordsMessage = "Нет пункта"
+detailsPage = "home"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+<div class="flabFooter" id="contacts">
+  <div class="flabFooter__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-12">
+          <div class="flabFooter__logo wow fadeInUp" data-wow-duration="1.8s">
+            <a href="#"><img src="{{'assets/images/svg/logoFooter.svg'|theme}}" alt=""></a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div class="flabFooter__item wow fadeInUp" data-wow-duration="2s">
+            <h2 class="flabFooter__itemCap">Навигация</h2>
+            <ul class="flabFooter__nav">
+
+              {% set records = menu.records %}
+              {% set displayColumn = menu.displayColumn %}
+              {% set noRecordsMessage = menu.noRecordsMessage %}
+              {% set detailsPage = menu.detailsPage %}
+              {% set detailsKeyColumn = menu.detailsKeyColumn %}
+              {% set detailsUrlParameter = menu.detailsUrlParameter %}
+
+              {% for record in records %}
+              <li><a href="#{{record.link}}">{{record.item}}</a></li>
+                {% else %}
+              <li class=" no-data">{{ noRecordsMessage }}</li>
+              {% endfor %}
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div class="flabFooter__item wow fadeInUp" data-wow-duration="2.5s">
+            <h2 class="flabFooter__itemCap">мы с соц.сетях</h2>
+            <ul class="flabFooter__social">
+              <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a target="_blank" href="#"><i class="fab fa-vk"></i></a></li>
+              <li><a target="_blank" href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a target="_blank" href="#"><i class="fab fa-google"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        {% set records = contacts.records %}
+        {% set displayColumn = contacts.displayColumn %}
+        {% set noRecordsMessage = contacts.noRecordsMessage %}
+        {% set detailsPage = contacts.detailsPage %}
+        {% set detailsKeyColumn = contacts.detailsKeyColumn %}
+        {% set detailsUrlParameter = contacts.detailsUrlParameter %}
+
+        {% for record in records %}
+
+        <div class="col-xl-3 col-lg-3 col-md-4">
+          <div class="flabFooter__item wow fadeInUp" data-wow-duration="2.8s">
+            <h2 class="flabFooter__itemCap">Контакты</h2>
+            <ul class="flabFooter__contacts">
+              <li><i class="far fa-map-marker-alt"></i> {{ record.place }}</li>
+              <li><i class="fal fa-mobile"></i> <a target="_blank"
+                  href="tel:+{{ record.phone }}">+{{ record.phone }}</a>
+              </li>
+              <li><i class="fal fa-envelope"></i> <a target="_blank"
+                  href="mailto:{{ record.mail }}  ">{{ record.mail }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% else %}
+        <p class="no-data">{{ noRecordsMessage }}</p>
+        {% endfor %}`
+      </div>
+    </div>
+  </div>
+  <div class="flabFooter__bottom">
+    <div class="container">
+      <div class="flabFooter__bottomWrap">
+        <div class="flabFooter__copySite wow fadeInLeft" data-wow-duration="1.8s">
+          <p>&copy; {{ "now"|date("Y") }} Queen Host</p>
+        </div>
+        <div class="flabFooter__copyDev wow fadeInRight" data-wow-duration="3s">
+          <div class="flabCopyAg">
+            <iframe class="frame" src="https://akmalkurbanov.github.io/copyright_Queen/white.html"
+              frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

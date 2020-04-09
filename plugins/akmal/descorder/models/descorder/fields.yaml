@@ -1,0 +1,31 @@
+fields:
+    heading:
+        label: 'Desc heading'
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: heading
+            type: slug
+        type: text
+tabs:
+    fields:
+        description:
+            label: Description
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'Tab 1'
+        link:
+            label: Link
+            span: auto
+            type: text
+            tab: 'Tab 1'
+        img:
+            label: Image
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: 'Tab 1'

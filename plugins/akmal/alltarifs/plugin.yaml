@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.alltarifs::lang.plugin.name'
+    description: 'akmal.alltarifs::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-tags
+    homepage: ''
+navigation:
+    allTarifs:
+        label: tarifs
+        url: akmal/alltarifs/alltarifs
+        icon: icon-tags

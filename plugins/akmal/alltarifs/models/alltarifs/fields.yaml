@@ -1,0 +1,20 @@
+fields:
+    description:
+        label: 'Tarif description'
+        size: ''
+        span: auto
+        type: richeditor
+tabs:
+    fields:
+        platform:
+            label: platform
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: 'Tab 1'
+        bonus:
+            label: 'Tarif bonus'
+            size: ''
+            span: auto
+            type: richeditor
+            tab: 'Tab 1'

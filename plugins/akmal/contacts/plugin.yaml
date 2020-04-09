@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.contacts::lang.plugin.name'
+    description: 'akmal.contacts::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-phone
+    homepage: ''
+navigation:
+    contacts:
+        label: contacts
+        url: akmal/contacts/contacts
+        icon: icon-phone

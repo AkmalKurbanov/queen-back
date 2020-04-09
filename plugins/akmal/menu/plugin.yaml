@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.menu::lang.plugin.name'
+    description: 'akmal.menu::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-list-ul
+    homepage: ''
+navigation:
+    menu:
+        label: Menu
+        url: akmal/menu/menu
+        icon: icon-list-ul

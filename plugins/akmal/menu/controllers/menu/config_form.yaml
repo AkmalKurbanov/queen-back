@@ -1,0 +1,10 @@
+name: Menu
+form: $/akmal/menu/models/menu/fields.yaml
+modelClass: Akmal\Menu\Models\Menu
+defaultRedirect: akmal/menu/menu
+create:
+    redirect: 'akmal/menu/menu/update/:id'
+    redirectClose: akmal/menu/menu
+update:
+    redirect: akmal/menu/menu
+    redirectClose: akmal/menu/menu

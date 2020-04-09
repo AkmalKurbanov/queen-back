@@ -1,0 +1,10 @@
+name: FAQ
+form: $/akmal/faq/models/faq/fields.yaml
+modelClass: Akmal\Faq\Models\FAQ
+defaultRedirect: akmal/faq/faq
+create:
+    redirect: 'akmal/faq/faq/update/:id'
+    redirectClose: akmal/faq/faq
+update:
+    redirect: akmal/faq/faq
+    redirectClose: akmal/faq/faq

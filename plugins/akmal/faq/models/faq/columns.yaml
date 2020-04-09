@@ -1,0 +1,7 @@
+columns:
+    question:
+        label: 'FAQ question'
+        type: text
+    description:
+        label: 'FAQ description'
+        type: text

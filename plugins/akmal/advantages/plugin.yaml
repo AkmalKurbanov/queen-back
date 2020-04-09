@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.advantages::lang.plugin.name'
+    description: 'akmal.advantages::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-check-circle
+    homepage: ''
+navigation:
+    advantages:
+        label: advantages
+        url: akmal/advantages/advantages
+        icon: icon-check-circle

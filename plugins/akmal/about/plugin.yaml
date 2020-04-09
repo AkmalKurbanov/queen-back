@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.about::lang.plugin.name'
+    description: 'akmal.about::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-info
+    homepage: ''
+navigation:
+    about:
+        label: about
+        url: akmal/about/about
+        icon: icon-info

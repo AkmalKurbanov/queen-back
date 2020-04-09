@@ -1,0 +1,11 @@
+name: About
+modelClass: Akmal\About\Models\About
+form: $/akmal/about/models/about/fields.yaml
+defaultRedirect: akmal/about/about
+create:
+    redirect: 'akmal/about/about/update/:id'
+    redirectClose: akmal/about/about
+update:
+    redirect: akmal/about/about
+    redirectClose: akmal/about/about
+preview: {  }

@@ -1,0 +1,7 @@
+columns:
+    title:
+        label: 'advantage title'
+        type: text
+    description:
+        label: 'advantages description'
+        type: text

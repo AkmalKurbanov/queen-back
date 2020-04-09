@@ -1,0 +1,44 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ this.page.title }}</title>
+  <meta name="description" content="{{ this.page.meta_description }}">
+  <meta name="title" content="{{ this.page.meta_title }}">
+  <meta name="author" content="OctoberCMS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="OctoberCMS">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/favicon/favicon-16x16.png'|theme }}">
+  <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+  <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
+  <link href="{{ 'assets/css/main.css'|theme }}" rel="stylesheet">
+  <script src="{{ 'assets/javascript/modernizr.js'|theme }}"></script>
+  {% styles %}
+</head>
+
+<body>
+  <div class="flabWrapper">
+    <div class="flabContent">
+      <!-- header -->
+      {% partial 'site/header' %}
+      <!-- header end -->
+      {% page %}
+    </div>
+    <!-- footer -->
+    {% partial 'site/footer' %}
+    {% partial 'popup-window/popup' %}
+    <!-- footer -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ 'assets/javascript/vendor.js'|theme }}"></script>
+  <script src="{{ 'assets/javascript/main.js'|theme }}"></script>
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+columns:
+    item:
+        label: 'menu item'
+        type: text
+    link:
+        label: 'menu item link'
+        type: text

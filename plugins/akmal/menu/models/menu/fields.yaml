@@ -1,0 +1,9 @@
+fields:
+    item:
+        label: 'Menu item'
+        span: auto
+        type: text
+    link:
+        label: 'Menu item link'
+        span: auto
+        type: text

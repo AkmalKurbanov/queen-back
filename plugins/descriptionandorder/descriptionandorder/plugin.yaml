@@ -1,0 +1,6 @@
+plugin:
+    name: desc-order
+    description: 'desc_order.desc_order::lang.plugin.description'
+    author: desc-order
+    icon: oc-icon-list-alt
+    homepage: ''

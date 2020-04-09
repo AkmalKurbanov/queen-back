@@ -1,0 +1,11 @@
+name: Advantages
+modelClass: Akmal\Advantages\Models\Advantages
+form: $/akmal/advantages/models/advantages/fields.yaml
+defaultRedirect: akmal/advantages/advantages
+create:
+    redirect: 'akmal/advantages/advantages/update/:id'
+    redirectClose: akmal/advantages/advantages
+update:
+    redirect: akmal/advantages/advantages
+    redirectClose: akmal/advantages/advantages
+preview: {  }

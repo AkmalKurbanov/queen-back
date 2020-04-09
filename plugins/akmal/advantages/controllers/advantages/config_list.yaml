@@ -1,0 +1,12 @@
+title: Advantages
+modelClass: Akmal\Advantages\Models\Advantages
+list: $/akmal/advantages/models/advantages/columns.yaml
+recordUrl: 'akmal/advantages/advantages/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
