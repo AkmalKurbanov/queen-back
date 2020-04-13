@@ -8,3 +8,7 @@ fields:
         size: ''
         span: right
         type: richeditor
+    icon:
+        label: 'Select Icon'
+        type: zakir_allfonticons
+        placeholder: '-- Please Select --'

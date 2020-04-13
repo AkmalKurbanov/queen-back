@@ -3,3 +3,9 @@
 1.0.2:
     - 'Created table akmal_alltarifs_'
     - builder_table_create_akmal_alltarifs_.php
+1.0.3:
+    - 'Updated table akmal_alltarifs_'
+    - builder_table_update_akmal_alltarifs_.php
+1.0.4:
+    - 'Updated table akmal_alltarifs_'
+    - builder_table_update_akmal_alltarifs__2.php

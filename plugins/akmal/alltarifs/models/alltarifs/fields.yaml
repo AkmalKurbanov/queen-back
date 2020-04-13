@@ -1,20 +1,61 @@
 fields:
-    description:
-        label: 'Tarif description'
-        size: ''
+    title:
+        label: Заголовок
         span: auto
-        type: richeditor
-tabs:
-    fields:
-        platform:
-            label: platform
-            mode: image
-            span: auto
-            type: mediafinder
-            tab: 'Tab 1'
-        bonus:
-            label: 'Tarif bonus'
-            size: ''
-            span: auto
-            type: richeditor
-            tab: 'Tab 1'
+        type: text
+    price_month:
+        label: 'В месяц'
+        span: auto
+        type: number
+    price_year:
+        label: 'В год'
+        span: auto
+        type: number
+    visits:
+        label: Посещений
+        span: auto
+        type: text
+    sites:
+        label: 'Всего сайтов'
+        span: auto
+        type: number
+    disk:
+        label: Диск
+        span: auto
+        type: number
+    ssl:
+        label: SSL
+        span: auto
+        type: switch
+    support:
+        label: Техподдержка
+        span: auto
+        type: switch
+    consult:
+        label: Консультация
+        span: auto
+        type: switch
+    php:
+        label: PHP
+        span: auto
+        type: switch
+    ruby:
+        label: Ruby
+        span: auto
+        type: switch
+    python:
+        label: Python
+        span: auto
+        type: switch
+    subdomains:
+        label: Поддомены
+        span: auto
+        type: text
+    mail:
+        label: Почта
+        span: auto
+        type: text
+    ftp_db:
+        label: FTP
+        span: auto
+        type: text

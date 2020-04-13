@@ -35,6 +35,16 @@ detailsPage = "home"
 detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 pageNumber = "{{ :page }}"
+
+[builderList tarifs]
+modelClass = "Akmal\Alltarifs\Models\AllTarifs"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
 <div class="domain-selection">
   <div class="flabCaption wow fadeInDown">
@@ -171,10 +181,11 @@ pageNumber = "{{ :page }}"
 
         <div class="col-xl-6 col-lg-6">
           <div class="flabAdvantages__item wow fadeInLeft" data-wow-duration="1s">
-            <div class="flabAdvantages__icon"><i class="flabio-event"></i></div>
+            <div class="flabAdvantages__icon"><i class="{{ record.icon }}"></i></div>
             <div class="flabAdvantages__desc">
               <h2 class="flabAdvantages__itemCaption">{{ record.title }}</h2>
               {{ record.description|raw }}
+              
             </div>
           </div>
         </div>
@@ -381,6 +392,9 @@ pageNumber = "{{ :page }}"
     <h2 class="flabCaption__secondCap">ВЫБЕРИТЕ ТАРИФНЫЙ ПЛАН</h2>
   </div>
   <div class="container">
+
+    {% set records = tarifs.records %}
+
     <div class="flabDetailedDesc__rateTable wow fadeInLeft">
       <table>
         <tr>
@@ -391,32 +405,20 @@ pageNumber = "{{ :page }}"
               </div>
             </div>
           </td>
+          {% for record in records %}
           <th colspan="2">
             <div class="flabDetailedDesc__tarif">
-              <h2 class="flabRate__caption">Базовый</h2>
+              <h2 class="flabRate__caption">{{record.title}}</h2>
             </div>
           </th>
-          <th colspan="2">
-            <div class="flabDetailedDesc__tarif">
-              <h2 class="flabRate__caption">СТАНДАРТ</h2>
-            </div>
-          </th>
-          <th colspan="2">
-            <div class="flabDetailedDesc__tarif">
-              <h2 class="flabRate__caption">бизнес</h2>
-            </div>
-          </th>
-          <th colspan="2">
-            <div class="flabDetailedDesc__tarif">
-              <h2 class="flabRate__caption">ПРЕМИУМ</h2>
-            </div>
-          </th>
+          {% endfor %}
         </tr>
         <tr>
+          {% for record in records %}
           <td>
             <div class="flabDetailedDesc__tarifPrice">
               <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">1500</span> <span
+                  class="flabRate__price flabRate__price--detailPrice">{{record.price_month}}</span> <span
                   class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в месяц
               </p>
             </div>
@@ -424,155 +426,76 @@ pageNumber = "{{ :page }}"
           <td>
             <div class="flabDetailedDesc__tarifPrice flabDetailedDesc__tarifPrice--secondPrice">
               <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">2500</span> <span
+                  class="flabRate__price flabRate__price--detailPrice">{{record.price_year}}</span> <span
                   class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в год
               </p>
             </div>
           </td>
-          <td>
-            <div class="flabDetailedDesc__tarifPrice">
-              <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">2000</span> <span
-                  class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в месяц
-              </p>
-            </div>
           </td>
-          <td>
-            <div class="flabDetailedDesc__tarifPrice flabDetailedDesc__tarifPrice--secondPrice">
-              <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">3000</span> <span
-                  class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в год
-              </p>
-            </div>
-          </td>
-          <td>
-            <div class="flabDetailedDesc__tarifPrice">
-              <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">500</span> <span
-                  class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в месяц
-              </p>
-            </div>
-          </td>
-          <td>
-            <div class="flabDetailedDesc__tarifPrice flabDetailedDesc__tarifPrice--secondPrice">
-              <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">1500</span> <span
-                  class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в год
-              </p>
-            </div>
-          </td>
-          <td>
-            <div class="flabDetailedDesc__tarifPrice">
-              <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">2000</span> <span
-                  class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в месяц
-              </p>
-            </div>
-            </th>
-          <td>
-            <div class="flabDetailedDesc__tarifPrice flabDetailedDesc__tarifPrice--secondPrice">
-              <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                  class="flabRate__price flabRate__price--detailPrice">3000</span> <span
-                  class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в год
-              </p>
-            </div>
-          </td>
+          {% endfor %}
         </tr>
         <tr>
+          {% for record in records %}
           <td colspan="2">
             <div class="flabBtnWrap flabBtnWrap--detailTarifBtnWrap"><a target="_blank" href="#"
                 class="flabBtnWrap__btn flabBtnWrap__btn--rateBtn">Заказать</a></div>
           </td>
-          <td colspan="2">
-            <div class="flabBtnWrap flabBtnWrap--detailTarifBtnWrap"><a target="_blank" href="#"
-                class="flabBtnWrap__btn flabBtnWrap__btn--rateBtn">Заказать</a></div>
-          </td>
-          <td colspan="2">
-            <div class="flabBtnWrap flabBtnWrap--detailTarifBtnWrap"><a target="_blank" href="#"
-                class="flabBtnWrap__btn flabBtnWrap__btn--rateBtn">Заказать</a></div>
-          </td>
-          <td colspan="2">
-            <div class="flabBtnWrap flabBtnWrap--detailTarifBtnWrap"><a target="_blank" href="#"
-                class="flabBtnWrap__btn flabBtnWrap__btn--rateBtn">Заказать</a></div>
-          </td>
-
+          {% endfor %}
         </tr>
       </table>
-      <div class="info-domain">
-        <div class="info-domain__item">
-          <div class="flabDetailedDesc__tarif">
-            <h2 class="flabRate__caption">Базовый</h2>
-          </div>
-        </div>
-        <div class="info-domain__item">
-          <div class="flabDetailedDesc__tarifPrice">
-            <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                class="flabRate__price flabRate__price--detailPrice">1500</span> <span
-                class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в месяц</p>
-          </div>
-        </div>
-        <div class="info-domain__item">
-          <div class="flabDetailedDesc__tarifPrice">
-            <p class="flabRate__priceWrap flabRate__priceWrap--detailPriceWrap"><span
-                class="flabRate__price flabRate__price--detailPrice">1500</span> <span
-                class="flabRate__currency flabRate__currency--detailCurrency">c</span><br>в месяц</p>
-          </div>
-        </div>
-        <div class="info-domain__item">
-          <p>Посещений в месяц</p>
-          <p>до 25000</p>
-        </div>
-        <div class="info-domain__item">
-          <div class="flabBtnWrap flabBtnWrap--detailTarifBtnWrap"><a target="_blank" href="#"
-              class="flabBtnWrap__btn flabBtnWrap__btn--rateBtn">Заказать</a></div>
-        </div>
-      </div>
+
     </div>
     <table class="wow fadeInRight">
       <thead>
         <tr>
           <th>Посещений в месяц</th>
-          <th>до 25000</th>
-          <th>до 50000</th>
-          <th>неограничено</th>
-          <th>неограничено</th>
+          {% for record in records %}
+          <th>{{record.visits}}</th>
+          {% endfor %}
         </tr>
       </thead>
       <tbody>
         <tr>
           <td data-header-title="Количество сайтов">Всего сайтов</td>
-          <td data-header-title="Базовый">2</td>
-          <td data-header-title="Стандарт">5</td>
-          <td data-header-title="Премиум">10</td>
-          <td data-header-title="Премиум">10</td>
+          {% for record in records %}
+          <td data-header-title="Базовый">{{record.sites}}</td>
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="Объем">Дисковое пространство</td>
-          <td data-header-title="Базовый">5 gb</td>
-          <td data-header-title="Стандарт">10 gb</td>
-          <td data-header-title="Премиум">20 gb</td>
-          <td data-header-title="Премиум">20 gb</td>
+          {% for record in records %}
+          <td data-header-title="Базовый">{{record.disk}}</td>
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="МИНИ САД">Импортированный SSL</td>
+          {% for record in records %}
+          {% if (record.ssl == 1) %}
+          <td data-header-title="Базовый"><i class="fal fa-check"></i></td>
+          {% else %}
           <td data-header-title="Базовый"></td>
-          <td data-header-title="Стандарт"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
+          {% endif %}
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="Часы работы">Техподдержка 24/7</td>
+          {% for record in records %}
+          {% if (record.support == 1) %}
           <td data-header-title="Базовый"><i class="fal fa-check"></i></td>
-          <td data-header-title="Стандарт"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
+          {% else %}
+          <td data-header-title="Базовый"></td>
+          {% endif %}
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="МИНИ САД">Консультационные услуги</td>
+          {% for record in records %}
+          {% if (record.consult == 1) %}
+          <td data-header-title="Базовый"><i class="fal fa-check"></i></td>
+          {% else %}
           <td data-header-title="Базовый"></td>
-          <td data-header-title="Стандарт"></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
+          {% endif %}
+          {% endfor %}
         </tr>
       </tbody>
     </table>
@@ -580,51 +503,58 @@ pageNumber = "{{ :page }}"
       <thead>
         <tr>
           <th>PHP 5.2-7.1</th>
-          <th><i class="fal fa-check"></i></th>
-          <th><i class="fal fa-check"></i></th>
-          <th><i class="fal fa-check"></i></th>
-          <th><i class="fal fa-check"></i></th>
+          {% for record in records %}
+          {% if (record.php == 1) %}
+          <td data-header-title="Базовый"><i class="fal fa-check"></i></td>
+          {% else %}
+          <td data-header-title="Базовый"></td>
+          {% endif %}
+          {% endfor %}
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td data-header-title="Программное обеспечение">Ruby&amp;Rails</td>
+          <td data-header-title="Программное обеспечение">Ruby&Rails</td>
+          {% for record in records %}
+          {% if (record.ruby == 1) %}
           <td data-header-title="Базовый"><i class="fal fa-check"></i></td>
-          <td data-header-title="Стандарт"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
+          {% else %}
+          <td data-header-title="Базовый"></td>
+          {% endif %}
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="Язык программирования">Python 3.0</td>
+          {% for record in records %}
+          {% if (record.python == 1) %}
           <td data-header-title="Базовый"><i class="fal fa-check"></i></td>
-          <td data-header-title="Стандарт"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
-          <td data-header-title="Премиум"><i class="fal fa-check"></i></td>
+          {% else %}
+          <td data-header-title="Базовый"></td>
+          {% endif %}
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="Субдомены">Субдоменов</td>
-          <td data-header-title="Базовый">не ограничено</td>
-          <td data-header-title="Стандарт">не ограничено</td>
-          <td data-header-title="Премиум">не ограничено</td>
-          <td data-header-title="Премиум">не ограничено</td>
+          {% for record in records %}
+          <td data-header-title="Базовый">{{record.subdomains}}</td>
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="Почтовые ящики">Почтовые ящики</td>
-          <td data-header-title="Базовый">не ограничено</td>
-          <td data-header-title="Стандарт">не ограничено</td>
-          <td data-header-title="Премиум">не ограничено</td>
-          <td data-header-title="Премиум">не ограничено</td>
+          {% for record in records %}
+          <td data-header-title="Базовый">{{record.mail}}</td>
+          {% endfor %}
         </tr>
         <tr>
           <td data-header-title="База данных">FTP и БД</td>
-          <td data-header-title="Базовый">не ограничено</td>
-          <td data-header-title="Стандарт">не ограничено</td>
-          <td data-header-title="Премиум">не ограничено</td>
-          <td data-header-title="Премиум">не ограничено</td>
+          {% for record in records %}
+          <td data-header-title="Базовый">{{record.ftp_db}}</td>
+          {% endfor %}
         </tr>
       </tbody>
     </table>
   </div>
+
 </div>
 <div class="flabAll">
   <div class="flabCaption wow fadeInDown">
